@@ -24,6 +24,8 @@ namespace CodingWiki_model.Models
                 return $"{FirstName} {LastName}";
             } }
 
-    }
+        public List<Book> Books { get; set; }
+
+        }
 
     }

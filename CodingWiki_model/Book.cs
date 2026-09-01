@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CodingWiki_model.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -19,5 +20,15 @@ namespace CodingWiki_model
         public decimal Price { get; set; }
         [NotMapped]
         public string PriceRange { get; set; }
+        //[ForeignKey("BookDetailsTable")]
+        //public int BoookDetails_id { get; set; }
+
+        public BookDetails BookDetailsTable { get; set; }
+        [ForeignKey("Publisher")]
+        public int Publisher_Id { get; set; }
+
+        public Publisher Publisher { get; set; }
+        public List<BookAuthorMap> BookAuthorMap { get; set; }
+
     }
 }
