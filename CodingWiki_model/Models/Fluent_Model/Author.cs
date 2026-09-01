@@ -8,26 +8,28 @@ using System.Threading.Tasks;
 
 namespace CodingWiki_model.Models
 {
-    public class Author
+    public class Fluent_Author
     {
-        [Key]
+        //[Key]
         public int Author_id { get; set; }
-        [Required]
-        [MaxLength(50)]
+       // [Required]
+       // [MaxLength(50)]
         public string FirstName { get; set; }
-        [Required]
+        //[Required]
         public string LastName { get; set; } = string.Empty;
         public DateTime BirthDate { get; set; }
         public string Location { get; set; }
-        [NotMapped]
+       // [NotMapped]
         public string FullName { get { 
                 return $"{FirstName} {LastName}";
             } }
 
-        public List<Book> Books { get; set; }
+        //public List<Book> Books { get; set; }
 
-        public List<BookAuthorMap> BookAuthorMap { get; set; }
+     //   public List<Fluent_Book> Books { get; set; }
 
-    }
+        public List<Fluent_BookAuthorMap> BookAuthorMap { get; set; }
+
+        }
 
     }
